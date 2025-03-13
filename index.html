@@ -75,13 +75,11 @@
             margin-bottom: 15px;
         }
 
-        /* Social Links */
+        /* Social Links (Transparent with Emoji Images) */
         .social-links a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             padding: 10px;
@@ -91,10 +89,18 @@
             border-radius: 10px;
             transition: 0.3s;
             font-size: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .social-links a:hover {
             background: rgba(0, 255, 153, 0.3);
             transform: scale(1.05);
+        }
+
+        /* Custom Emoji (Image) on Buttons */
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
 
     </style>
@@ -109,10 +115,18 @@
             <p class="bio">🌿 Developer | Gamer | Coder</p>
 
             <div class="social-links">
-                <a href="https://discord.gg/tF2wkXPYFw" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs-5uI8NnO7NE2nsUpo78NGXYbod4MfAAgYb_0GOD_eYwWN1LDCYt4anY6&s=10 Discord</a>
-                <a href="https://github.com/inosuke778877" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOO0Awtyc44A6bZ_JjhV08heu9xwNsbMoktWbFuilC7bgiBoFXbpYKqHTL&s=10"> GitHub</a>
-                <a href="https://twitter.com/YOUR_REAL_TWITTER" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhj_o2d_86DhA-g1KdlsxFQQKNFimREJrkg&s Twitter</a>
-                <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjfpgMWUTCV1_BYOJvg08uqlnIfeQHqnOag&s"> YouTube</a>
+                <a href="https://discord.gg/tF2wkXPYFw" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8q8_5DUy83LJscL5jc-kB2B0CsDumFALYtdOIq29DEGDuy7A9KmQW7ChQ&s=10" alt="Discord Logo"> Discord
+                </a>
+                <a href="https://github.com/inosuke778877" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB_O4k253BdVY8dGN8Q80YEA9KjsfwynuOy-ucGLPa5Q&s" alt="GitHub Logo"> GitHub
+                </a>
+                <a href="https://twitter.com/YOUR_REAL_TWITTER" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhj_o2d_86DhA-g1KdlsxFQQKNFimREJrkg&s" alt="Twitter Logo"> Twitter
+                </a>
+                <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjfpgMWUTCV1_BYOJvg08uqlnIfeQHqnOag&s" alt="YouTube Logo"> YouTube
+                </a>
             </div>
         </div>
     </div>
