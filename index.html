@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inosuke_on_drugxxx - Profile</title>
-
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="inosuke_on_drugxxx - Profile">
     <meta property="og:description" content="Check out my social links and connect with me!">
@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* Fullscreen Background */
         body {
             font-family: 'Poppins', sans-serif;
             background: url('https://i.pinimg.com/originals/6f/52/a3/6f52a365ea0d10dee4938555c88ae2cd.gif') no-repeat center center fixed;
@@ -34,6 +35,7 @@
             margin: 0;
         }
 
+        /* Profile Container */
         .container {
             max-width: 500px;
             backdrop-filter: blur(10px);
@@ -46,6 +48,7 @@
             gap: 15px;
         }
 
+        /* Avatar */
         .avatar {
             width: 100px;
             height: 100px;
@@ -53,6 +56,7 @@
             border: 2px solid #00ff92;
         }
 
+        /* Profile Content */
         .profile-info {
             flex-grow: 1;
         }
@@ -69,6 +73,7 @@
             margin-bottom: 15px;
         }
 
+        /* Social Links */
         .social-links a {
             display: flex;
             align-items: center;
@@ -83,7 +88,6 @@
             font-size: 18px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .social-links a:hover {
             background: rgba(0, 255, 153, 0.3);
             transform: scale(1.05);
@@ -95,34 +99,28 @@
             margin-right: 10px;
         }
 
-        .music-toggle {
-            cursor: pointer;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .music-toggle img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .music-toggle:hover {
-            transform: scale(1.1);
-        }
-
+        /* Music Controls */
         .music-controls {
-            display: none;
-            margin-top: 10px;
-            padding: 15px;
+            margin-top: 20px;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             border-radius: 10px;
             text-align: center;
             width: 300px;
+            display: none; /* Hidden initially */
             flex-direction: column;
             align-items: center;
         }
 
+        /* Song Title */
+        .song-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Play/Pause Button */
         .play-pause-btn {
             background: none;
             border: none;
@@ -135,83 +133,88 @@
             padding: 10px;
             transition: 0.3s;
         }
-
         .play-pause-btn img {
             width: 30px;
             height: 30px;
         }
-
         .play-pause-btn:hover {
             transform: scale(1.1);
         }
 
+        /* Volume Control */
         .volume-control {
             width: 100%;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
-        .progress-bar {
-            width: 100%;
-            margin-top: 10px;
-        }
-
         input[type="range"] {
             width: 100%;
             accent-color: #00ff99;
         }
 
-        .track-info {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #ddd;
+        /* Music Icon */
+        .music-icon {
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 24px;
         }
+
     </style>
 </head>
 <body>
 
+    <!-- Profile Section -->
     <div class="container">
         <img src="https://www.gifcen.com/wp-content/uploads/2022/07/inosuke-gif.gif" alt="Profile Picture" class="avatar">
         
         <div class="profile-info">
             <h1 class="name">inosuke_on_drugxxx</h1>
             <p class="bio">🌿 Developer | Gamer | Coder</p>
+
+            <div class="social-links">
+                <a href="https://discord.gg/tF2wkXPYFw" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8q8_5DUy83LJscL5jc-kB2B0CsDumFALYtdOIq29DEGDuy7A9KmQW7ChQ&s=10" alt="Discord Logo"> Discord
+                </a>
+                <a href="https://github.com/inosuke778877" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"> GitHub
+                </a>
+                <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="_blank">
+                    <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube Logo"> YouTube
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="music-toggle" onclick="toggleMusicControls()">
-        <img src="YOUR_EMOJI_URL" alt="Music Icon">
+    <!-- Music Icon (Click to Show) -->
+    <div class="music-icon" onclick="toggleMusicControls()">
+        🎵
     </div>
 
-    <div class="music-controls" id="musicControls">
-        <div class="track-info">
-            <b>Now Playing:</b> <span id="trackName">Middle of the Night</span>
-        </div>
-        
+    <!-- Music Player -->
+    <div class="music-controls">
+        <p class="song-title">🎶 Middle of the Night - Elley Duhé</p>
         <button class="play-pause-btn" onclick="togglePlayPause()">
-            <img id="playPauseIcon" src="https://static.thenounproject.com/png/3002890-512.png" alt="Play Icon"> Play
+            <img id="playPauseIcon" src="https://cdn-icons-png.flaticon.com/512/4028/4028759.png" alt="Play Icon"> Play
         </button>
-
-        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0" step="0.1">
-
         <div class="volume-control">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QGLGWRKUIJPADYTG2KjtXQqpaMOuhBKkDQ&s" alt="Volume Icon" style="width: 25px; vertical-align: middle;">
+            🔊
             <input type="range" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume(this.value)">
         </div>
     </div>
 
     <audio id="backgroundMusic" src="https://raw.githubusercontent.com/Inosuke778877/profile/main/Elley%20Duh%C3%A9%20-%20MIDDLE%20OF%20THE%20NIGHT%20(Official%20Video).mp3" loop></audio>
-
+    
     <script>
-        let music = document.getElementById("backgroundMusic");
-        let playPauseIcon = document.getElementById("playPauseIcon");
-        let musicControls = document.getElementById("musicControls");
-        let progressBar = document.getElementById("progressBar");
-
         function toggleMusicControls() {
-            musicControls.style.display = musicControls.style.display === "flex" ? "none" : "flex";
+            document.querySelector('.music-controls').style.display = "flex";
         }
 
         function togglePlayPause() {
+            let music = document.getElementById("backgroundMusic");
+            let playPauseIcon = document.getElementById("playPauseIcon");
+
             if (music.paused) {
                 music.play();
                 playPauseIcon.src = "https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_play_circle_filled_white_48px-512.png";
@@ -222,13 +225,8 @@
         }
 
         function changeVolume(value) {
-            music.volume = value;
+            document.getElementById("backgroundMusic").volume = value;
         }
-
-        music.addEventListener("timeupdate", function () {
-            let progress = (music.currentTime / music.duration) * 100;
-            progressBar.value = progress;
-        });
     </script>
 
 </body>
