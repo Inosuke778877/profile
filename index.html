@@ -53,7 +53,7 @@
             width: 100px;
             height: 100px;
             border-radius: 0%;
-            border: 2px solid #00ff92;
+            border: 2px solid #fffafa;
         }
 
         /* Profile Content */
@@ -99,68 +99,6 @@
             margin-right: 10px;
         }
 
-        /* Music Controls */
-        .music-controls {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-            display: none; /* Hidden initially */
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Song Title */
-        .song-title {
-            font-size: 16px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* Play/Pause Button */
-        .play-pause-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            padding: 10px;
-            transition: 0.3s;
-        }
-        .play-pause-btn img {
-            width: 30px;
-            height: 30px;
-        }
-        .play-pause-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Volume Control */
-        .volume-control {
-            width: 100%;
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        input[type="range"] {
-            width: 100%;
-            accent-color: #00ff99;
-        }
-
-        /* Music Icon */
-        .music-icon {
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 24px;
-        }
-
     </style>
 </head>
 <body>
@@ -186,48 +124,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Music Icon (Click to Show) -->
-    <div class="music-icon" onclick="toggleMusicControls()">
-        🎵
-    </div>
-
-    <!-- Music Player -->
-    <div class="music-controls">
-        <p class="song-title">🎶 Middle of the Night - Elley Duhé</p>
-        <button class="play-pause-btn" onclick="togglePlayPause()">
-            <img id="playPauseIcon" src="https://cdn-icons-png.flaticon.com/512/4028/4028759.png" alt="Play Icon"> Play
-        </button>
-        <div class="volume-control">
-            🔊
-            <input type="range" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume(this.value)">
-        </div>
-    </div>
-
-    <audio id="backgroundMusic" src="https://raw.githubusercontent.com/Inosuke778877/profile/main/Elley%20Duh%C3%A9%20-%20MIDDLE%20OF%20THE%20NIGHT%20(Official%20Video).mp3" loop></audio>
-    
-    <script>
-        function toggleMusicControls() {
-            document.querySelector('.music-controls').style.display = "flex";
-        }
-
-        function togglePlayPause() {
-            let music = document.getElementById("backgroundMusic");
-            let playPauseIcon = document.getElementById("playPauseIcon");
-
-            if (music.paused) {
-                music.play();
-                playPauseIcon.src = "https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_play_circle_filled_white_48px-512.png";
-            } else {
-                music.pause();
-                playPauseIcon.src = "https://cdn-icons-png.flaticon.com/512/4028/4028759.png";
-            }
-        }
-
-        function changeVolume(value) {
-            document.getElementById("backgroundMusic").volume = value;
-        }
-    </script>
 
 </body>
 </html>
