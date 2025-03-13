@@ -34,41 +34,41 @@
             margin: 0;
         }
 
-        /* Transparent Glassmorphism Effect */
+        /* Profile Container (Transparent + Blur) */
         .container {
-            display: flex;
-            align-items: center;
-            backdrop-filter: blur(10px); /* Blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(0, 255, 153, 0.2);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
             text-align: left;
-            max-width: 600px;
-            width: 90%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        /* Avatar on Left */
+        /* Avatar (Top Left) */
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 20%;
             border: 2px solid #00ff92;
-            margin-right: 20px;
         }
 
         /* Profile Content */
-        .profile-content {
-            flex: 1;
+        .profile-info {
+            flex-grow: 1;
         }
 
+        /* Username */
         .name {
             font-size: 28px;
             font-weight: 600;
             margin: 0;
         }
 
+        /* Bio */
         .bio {
             font-size: 16px;
             color: #ddd;
@@ -77,22 +77,26 @@
 
         /* Social Links */
         .social-links a {
-            display: block;
-            text-align: center;
-            backdrop-filter: blur(8px); /* Glass effect */
-            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             padding: 10px;
             margin: 5px 0;
             text-decoration: none;
-            color: #15e8d8;
-            border-radius: 5px;
+            color: #fff;
+            border-radius: 10px;
             transition: 0.3s;
+            font-size: 18px;
         }
-
         .social-links a:hover {
             background: rgba(0, 255, 153, 0.3);
-            color: #111;
+            transform: scale(1.05);
         }
+
     </style>
 </head>
 <body>
@@ -100,16 +104,15 @@
     <div class="container">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0RsRueKSn5kASThLC_UpDstpSJm6O2NUhRzRuNrkhRQ&s" alt="Profile Picture" class="avatar">
         
-        <div class="profile-content">
+        <div class="profile-info">
             <h1 class="name">inosuke_on_drugxxx</h1>
             <p class="bio">🌿 Developer | Gamer | Coder</p>
-            <p class="bio">Discord pe backchodi karne wala chutiya</p>
 
             <div class="social-links">
-                <a href="https://discord.gg/tF2wkXPYFw" target="_blank">💬 Discord</a>
-                <a href="https://github.com/inosuke778877" target="_blank">🐱 GitHub</a>
-                <a href="https://twitter.com/YOUR_REAL_TWITTER" target="_blank">🐦 Twitter</a>
-                <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="_blank">📺 YouTube</a>
+                <a href="https://discord.gg/tF2wkXPYFw" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs-5uI8NnO7NE2nsUpo78NGXYbod4MfAAgYb_0GOD_eYwWN1LDCYt4anY6&s=10 Discord</a>
+                <a href="https://github.com/inosuke778877" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOO0Awtyc44A6bZ_JjhV08heu9xwNsbMoktWbFuilC7bgiBoFXbpYKqHTL&s=10"> GitHub</a>
+                <a href="https://twitter.com/YOUR_REAL_TWITTER" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfhj_o2d_86DhA-g1KdlsxFQQKNFimREJrkg&s Twitter</a>
+                <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjfpgMWUTCV1_BYOJvg08uqlnIfeQHqnOag&s"> YouTube</a>
             </div>
         </div>
     </div>
