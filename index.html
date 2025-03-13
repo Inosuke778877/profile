@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inosuke_on_drugxxx - Profile</title>
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="inosuke_on_drugxxx - Profile">
     <meta property="og:description" content="Check out my social links and connect with me!">
@@ -23,6 +23,7 @@
             font-family: 'Poppins', sans-serif;
             background: url('https://i.pinimg.com/originals/6f/52/a3/6f52a365ea0d10dee4938555c88ae2cd.gif') no-repeat center center fixed;
             background-size: cover;
+            background-attachment: fixed;
             min-height: 100vh;
             color: #fff;
             display: flex;
@@ -83,30 +84,43 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        .social-links a:hover {
+            background: rgba(0, 255, 153, 0.3);
+            transform: scale(1.05);
+        }
+
         .social-links img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
 
-        /* Music Controls */
-        .music-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .music-toggle {
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .music-toggle img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
         }
 
         .music-controls {
             display: none;
+            margin-top: 10px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            padding: 10px;
             border-radius: 10px;
             text-align: center;
             width: 300px;
+            flex-direction: column;
+            align-items: center;
         }
 
         .play-pause-btn {
@@ -114,11 +128,12 @@
             border: none;
             cursor: pointer;
             font-size: 24px;
-            color: white;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: white;
             padding: 10px;
+            transition: 0.3s;
         }
 
         .play-pause-btn img {
@@ -126,7 +141,16 @@
             height: 30px;
         }
 
+        .play-pause-btn:hover {
+            transform: scale(1.1);
+        }
+
         .volume-control {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
             width: 100%;
             margin-top: 10px;
         }
@@ -136,25 +160,15 @@
             accent-color: #00ff99;
         }
 
-        .music-info {
+        .track-info {
+            margin-top: 10px;
             font-size: 14px;
-            margin-top: 5px;
             color: #ddd;
         }
-
-        /* Music Icon Button */
-        .music-icon {
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-size: 30px;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- Profile Section -->
     <div class="container">
         <img src="https://www.gifcen.com/wp-content/uploads/2022/07/inosuke-gif.gif" alt="Profile Picture" class="avatar">
         
@@ -164,19 +178,24 @@
         </div>
     </div>
 
-    <!-- Music Controls (Hidden Initially) -->
-    <div class="music-container">
-        <button class="music-icon" onclick="toggleMusicControls()">🎵</button>
+    <div class="music-toggle" onclick="toggleMusicControls()">
+        <img src="YOUR_EMOJI_URL" alt="Music Icon">
+    </div>
 
-        <div class="music-controls" id="musicControls">
-            <p class="music-info">Now Playing: <span id="songTitle">MIDDLE OF THE NIGHT</span></p>
-            <button class="play-pause-btn" onclick="togglePlayPause()">
-                <img id="playPauseIcon" src="https://cdn-icons-png.flaticon.com/512/4028/4028759.png" alt="Play Icon"> 
-                Play
-            </button>
-            <input type="range" id="progressBar" min="0" value="0" step="1" onchange="seekAudio()">
-            <p class="music-info"><span id="currentTime">0:00</span> / <span id="totalTime">0:00</span></p>
-            <input type="range" class="volume-control" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume(this.value)">
+    <div class="music-controls" id="musicControls">
+        <div class="track-info">
+            <b>Now Playing:</b> <span id="trackName">Middle of the Night</span>
+        </div>
+        
+        <button class="play-pause-btn" onclick="togglePlayPause()">
+            <img id="playPauseIcon" src="https://static.thenounproject.com/png/3002890-512.png" alt="Play Icon"> Play
+        </button>
+
+        <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0" step="0.1">
+
+        <div class="volume-control">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QGLGWRKUIJPADYTG2KjtXQqpaMOuhBKkDQ&s" alt="Volume Icon" style="width: 25px; vertical-align: middle;">
+            <input type="range" min="0" max="1" step="0.1" value="0.5" onchange="changeVolume(this.value)">
         </div>
     </div>
 
@@ -185,13 +204,11 @@
     <script>
         let music = document.getElementById("backgroundMusic");
         let playPauseIcon = document.getElementById("playPauseIcon");
+        let musicControls = document.getElementById("musicControls");
         let progressBar = document.getElementById("progressBar");
-        let currentTimeText = document.getElementById("currentTime");
-        let totalTimeText = document.getElementById("totalTime");
 
         function toggleMusicControls() {
-            let controls = document.getElementById("musicControls");
-            controls.style.display = controls.style.display === "block" ? "none" : "block";
+            musicControls.style.display = musicControls.style.display === "flex" ? "none" : "flex";
         }
 
         function togglePlayPause() {
@@ -208,15 +225,10 @@
             music.volume = value;
         }
 
-        function seekAudio() {
-            music.currentTime = progressBar.value;
-        }
-
-        music.addEventListener("timeupdate", () => {
-            progressBar.value = music.currentTime;
-            currentTimeText.innerText = Math.floor(music.currentTime) + "s";
+        music.addEventListener("timeupdate", function () {
+            let progress = (music.currentTime / music.duration) * 100;
+            progressBar.value = progress;
         });
-
     </script>
 
 </body>
