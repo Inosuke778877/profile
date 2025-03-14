@@ -35,7 +35,7 @@
             margin: 0;
         }
 
-        /* Profile Container (Transparent + Blur) */
+        /* Profile Container */
         .container {
             max-width: 500px;
             backdrop-filter: blur(10px);
@@ -49,12 +49,10 @@
             gap: 15px;
         }
 
-        /* Avatar (Top Left) */
+        /* Avatar */
         .avatar {
             width: 100px;
             height: 100px;
-            border-radius: 0%;
-            border: 2px solid #00ff92;
         }
 
         /* Profile Content */
@@ -76,7 +74,7 @@
             margin-bottom: 15px;
         }
 
-        /* Social Links (Transparent with Emoji Images) */
+        /* Social Links */
         .social-links a {
             display: flex;
             align-items: center;
@@ -97,7 +95,7 @@
             transform: scale(1.05);
         }
 
-        /* Custom Emoji (Image) on Buttons */
+        /* Social Icons */
         .social-links img {
             width: 24px;
             height: 24px;
@@ -111,18 +109,17 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
             border-radius: 10px;
-            text-align: center;
-            width: 320px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
             box-shadow: 0px 0px 15px rgba(0, 255, 153, 0.3);
+            width: 350px;
         }
 
-        /* Server Icon Styling */
+        /* Server Icon */
         .server-icon {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 10px;
         }
 
         /* Join Button */
@@ -134,8 +131,8 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
-            margin-top: 10px;
             transition: 0.3s;
+            margin-top: 10px;
         }
         .join-btn:hover {
             background: #00cc77;
@@ -174,9 +171,11 @@
     <!-- Discord Server Embed -->
     <div class="discord-embed">
         <img src="https://cdn.discordapp.com/icons/1342779386444910675/391b2e5805922d6adae8fb579cc4e974.png" alt="Server Icon" class="server-icon">
-        <h2>Join My Discord Server</h2>
-        <p>Be a part of our community and connect with other members!</p>
-        <a href="https://discord.gg/tF2wkXPYFw" target="_blank" class="join-btn">Join Now</a>
+        <div>
+            <h2>Join My Discord Server</h2>
+            <p>Be a part of our community and connect with other members!</p>
+            <a href="https://discord.gg/tF2wkXPYFw" target="_blank" class="join-btn">Join Now</a>
+        </div>
     </div>
 
 </body>
