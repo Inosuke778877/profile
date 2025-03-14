@@ -35,10 +35,11 @@
             margin: 0;
         }
 
-        /* Profile Container */
+        /* Profile Container (Transparent + Blur) */
         .container {
             max-width: 500px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
@@ -48,12 +49,12 @@
             gap: 15px;
         }
 
-        /* Avatar */
+        /* Avatar (Top Left) */
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 0%;
-            border: 2px solid #fffafa;
+            border: 2px solid #00ff92;
         }
 
         /* Profile Content */
@@ -61,24 +62,27 @@
             flex-grow: 1;
         }
 
+        /* Username */
         .name {
             font-size: 28px;
             font-weight: 600;
             margin: 0;
         }
 
+        /* Bio */
         .bio {
             font-size: 16px;
             color: #ddd;
             margin-bottom: 15px;
         }
 
-        /* Social Links */
+        /* Social Links (Transparent with Emoji Images) */
         .social-links a {
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             padding: 10px;
             margin: 5px 0;
             text-decoration: none;
@@ -93,10 +97,55 @@
             transform: scale(1.05);
         }
 
+        /* Custom Emoji (Image) on Buttons */
         .social-links img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
+        }
+
+        /* Discord Embed Box */
+        .discord-embed {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Title */
+        .discord-embed h2 {
+            font-size: 22px;
+            margin: 0;
+            color: #00ff99;
+        }
+
+        /* Description */
+        .discord-embed p {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        /* Join Button */
+        .join-btn {
+            display: inline-block;
+            background: #00ff99;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            background: #00cc77;
+            transform: scale(1.05);
         }
 
     </style>
@@ -116,13 +165,20 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8q8_5DUy83LJscL5jc-kB2B0CsDumFALYtdOIq29DEGDuy7A9KmQW7ChQ&s=10" alt="Discord Logo"> Discord
                 </a>
                 <a href="https://github.com/inosuke778877" target="_blank">
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"> GitHub
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB_O4k253BdVY8dGN8Q80YEA9KjsfwynuOy-ucGLPa5Q&s" alt="GitHub Logo"> GitHub
                 </a>
                 <a href="https://youtube.com/@inosuke-zm4nq?si=2ShzEyfrM2_nvbLx" target="_blank">
-                    <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube Logo"> YouTube
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjfpgMWUTCV1_BYOJvg08uqlnIfeQHqnOag&s" alt="YouTube Logo"> YouTube
                 </a>
             </div>
         </div>
+    </div>
+
+    <!-- Discord Server Embed Section -->
+    <div class="discord-embed">
+        <h2>Join My Discord Server</h2>
+        <p>Be a part of our community and connect with other members!</p>
+        <a href="https://discord.gg/tF2wkXPYFw" target="_blank" class="join-btn">Join Now</a>
     </div>
 
 </body>
