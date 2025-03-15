@@ -101,9 +101,42 @@
             height: 24px;
             margin-right: 10px;
         }
+
+        /* Transparent Play Button */
+        .play-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .play-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Play Icon */
+        .play-btn img {
+            width: 30px;
+            height: 30px;
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Transparent Play Button -->
+    <div class="play-btn" id="playButton">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Play-button.svg" alt="Play">
+    </div>
+
     <!-- Profile Section -->
     <div class="container">
         <img src="https://www.gifcen.com/wp-content/uploads/2022/07/inosuke-gif.gif" alt="Profile Picture" class="avatar">
@@ -128,5 +161,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="https://github.com/Inosuke778877/profile/raw/refs/heads/main/Elley%20Duh%C3%A9%20-%20MIDDLE%20OF%20THE%20NIGHT%20(Official%20Video).mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Play Button Functionality
+        document.getElementById("playButton").addEventListener("click", function () {
+            let audio = document.getElementById("bg-music");
+            audio.play().then(() => {
+                document.getElementById("playButton").style.display = "none"; // Hide button after playing
+            }).catch(error => console.log("Playback failed:", error));
+        });
+    </script>
+
 </body>
 </html>
